@@ -7,10 +7,10 @@
 .area-stats{display:grid;gap:10px;margin-top:14px}.area-item{border:1px solid var(--line);border-radius:12px;padding:11px 13px}.area-head{display:flex;justify-content:space-between;gap:8px;align-items:center}.area-track{height:8px;background:#d9e5ea;border-radius:99px;overflow:hidden;margin-top:8px}.area-track>div{height:100%;background:#187b81}.area-muted{font-size:12px;color:var(--muted)}
 .data-figure{overflow-x:auto;margin:12px 0 16px;padding:12px;background:var(--card,#fff);border:1px solid #cbd9df;border-radius:12px}.data-figure table{border-collapse:collapse;width:100%;min-width:290px;font-size:13px}.data-figure th,.data-figure td{border:1px solid #a9bfc9;padding:8px;text-align:left;white-space:normal}.data-figure th{background:#e9f2f4;color:#20323a}.data-figure .sub{display:block;margin-bottom:7px}.data-figure .area-muted{margin-top:7px}</style></head>
 <body><main>
-<header class="top"><a href="./index.html">‹ ホーム</a><span class="sub">NEET LABS · Ver.0.7.3</span></header>
+<header class="top"><a href="./index.html">‹ ホーム</a><span class="sub">NEET LABS · Ver.1.0.0</span></header>
 <h1>ITパスポート 公式過去問</h1><div class="sub">令和8年度・令和7年度 ／ 全200問 ／ オフライン対応</div>
 <section id="setup" class="panel">
-  <div class="section-heading"><h2>演習を始める</h2><span class="pill">Ver.0.7.3</span></div>
+  <div class="section-heading"><h2>演習を始める</h2><span class="pill">Ver.1.0.0</span></div>
   <label for="year">年度</label><select id="year"><option value="all">両年度（200問）</option><option value="8">令和8年度（2026年度）</option><option value="7">令和7年度（2025年度）</option></select>
   <label for="category">分野</label><select id="category"><option value="all">全分野</option><option value="strategy">ストラテジ系（経営）</option><option value="management">マネジメント系（管理）</option><option value="technology">テクノロジ系（技術）</option></select>
   <label for="mode">出題方法</label><select id="mode"><option value="random">ランダム</option><option value="seq">問題番号順</option><option value="due">今日の復習（間隔復習）</option><option value="wrong">直近で間違えた問題</option><option value="weak">不正解・自信が低かった問題</option><option value="bookmarked">★ あとで復習</option><option value="new">未回答の問題</option><option value="text">文章の選択肢がある問題だけ</option><option value="verified">公式原文と照合済みの問題だけ</option></select>
@@ -169,7 +169,7 @@ function feedback(){let [y,n]=current(),id=key(y,n),a=ANSWERS[y][n-1],c=session.
 function next(){if(!session||!session.answer)return;session.pos++;session.answer=session.answers?.[session.pos]||null;safeWrite(SESKEY,session);show()}
 function skip(){if(!session||session.answer)return;session.pos++;session.answer=session.answers?.[session.pos]||null;safeWrite(SESKEY,session);show()}
 function goBack(){if(!session||session.pos===0)return;session.pos--;session.answer=session.answers?.[session.pos]||null;safeWrite(SESKEY,session);show()}
-function serialize(){return {app:'NEET LABS IT Passport',version:'0.7.3',exported:new Date().toISOString(),official:logs,bookmarks}}
+function serialize(){return {app:'NEET LABS IT Passport',version:'1.0.0',exported:new Date().toISOString(),official:logs,bookmarks}}
 function restoreCheck(raw){
  const r=JSON.parse(raw);
  const plain=x=>x&&typeof x==='object'&&!Array.isArray(x);
