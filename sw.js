@@ -1,4 +1,4 @@
-const C='itp-v0.6.7';
+const C='itp-v0.7.3';
 const REQUIRED=['./past.html','./sw.js'];
 const OPTIONAL=['./','./index.html','./manifest.json','./icon.png'];
 self.addEventListener('install',e=>e.waitUntil((async()=>{
